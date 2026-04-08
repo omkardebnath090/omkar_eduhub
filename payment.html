@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment — Omkar EduHub</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/payment.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Omkar EduHub</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h1>Complete Your Purchase</h1>
+        <p>Pay securely via any UPI App and get instant access</p>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+
+        <!-- Left — Order Summary -->
+        <div class="order-summary">
+            <h3>🧾 Order Summary</h3>
+
+            <div class="order-item">
+                <span>Course</span>
+                <strong>Biology — Grade 11</strong>
+            </div>
+            <div class="order-item">
+                <span>Duration</span>
+                <strong>1 Year Access</strong>
+            </div>
+            <div class="order-item">
+                <span>Videos</span>
+                <strong>10 Lessons</strong>
+            </div>
+            <div class="order-item">
+                <span>PDF Notes</span>
+                <strong>5 Notes</strong>
+            </div>
+
+            <div class="order-divider"></div>
+
+            <div class="order-total">
+                <span>Total Amount</span>
+                <strong>₹499</strong>
+            </div>
+
+            <!-- What you get -->
+            <div class="what-you-get">
+                <h4>✅ What you get:</h4>
+                <ul>
+                    <li>📹 Full video lessons</li>
+                    <li>📄 Downloadable PDF notes</li>
+                    <li>🔓 1 year unlimited access</li>
+                    <li>📱 Watch on any device</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right — QR Code Payment -->
+        <div class="payment-box">
+            <h3>📱 Pay via UPI</h3>
+            <p class="pay-instruction">Scan the QR code or use the UPI ID below</p>
+
+            <!-- QR Code Image -->
+            <div class="qr-wrapper">
+                <img src="../static/images/qrcode.jpeg" alt="Paytm QR Code" class="qr-image">
+            </div>
+            <div class="direct-pay">
+                <a href="upi://pay?pa=9862334721@paytm&pn=OmkarEduHub&am=499&cu=INR" class="btn upi-pay-btn">
+                    🚀 Open UPI App to Pay
+                </a>
+            </div>
+
+            <div class="upi-id">
+                <span>UPI ID:</span>
+                <strong id="upiId">9862334721@ptaxis</strong>
+                <button onclick="copyUPI()" class="copy-btn">Copy</button>
+            </div>
+
+            <div class="pay-steps">
+                <h4>How to pay:</h4>
+                <ol>
+                    <li>Open your <strong>Any UPI App</strong> (Gpay, PhonePe, Paytm)</li>
+                    <li>Scan the QR or enter the UPI ID</li>
+                    <li>Confirm the amount: <strong>₹499</strong></li>
+                    <li>Complete the payment</li>
+                </ol>
+            </div>
+
+            <!-- After Payment -->
+           <div class="after-payment">
+    <p class="verification-text"><strong>Step 2:</strong> Send a screenshot of the successful payment for instant course activation.</p>
+    
+    <a href="https://wa.me/919862334721?text=Hi%20Omkar%20EduHub,%20I%20have%20just%20paid%20₹499%20for%20the%20Biology%20Grade%2011%20course.%20Please%20verify%20my%20payment.%20My%20registered%20email%20is:%20" 
+       target="_blank" 
+       class="btn whatsapp-btn">
+       <span class="icon">💬</span> Confirm via WhatsApp
+    </a>
+</div>
+            <p class="success" id="copyMsg"></p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2026 Omkar EduHub | All Rights Reserved</p>
+    </footer>
+
+    <script src="../static/payment.js"></script>
+
+</body>
+</html>
