@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses — Omkar EduHub</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/courses.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Omkar EduHub</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h1>All Courses</h1>
+        <p>Choose your grade and start learning today</p>
+    </section>
+
+    <!-- Grade Filter Buttons -->
+    <section class="filters">
+        <button class="filter-btn active" onclick="filterCourses('all', this)">All</button>
+        <button class="filter-btn" onclick="filterCourses('9', this)">Grade 9</button>
+        <button class="filter-btn" onclick="filterCourses('10', this)">Grade 10</button>
+        <button class="filter-btn" onclick="filterCourses('11', this)">Grade 11</button>
+        <button class="filter-btn" onclick="filterCourses('12', this)">Grade 12</button>
+    </section>
+
+    <!-- FREE COURSES -->
+    <section class="courses-section">
+        <h2 class="section-title"> Free Courses</h2>
+        <div class="courses-grid" id="freeCourses">
+
+            <div class="course-card" data-grade="9">
+                <h3>Science — Grade 9</h3>
+                <p class="price free">FREE</p>
+                <a href="science-grade9.html" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="9">
+                <h3>Mathematics — Grade 9</h3>
+                <p class="price free">FREE</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="10">
+                <h3> Science — Grade 10</h3>
+                <!--you tube video-->
+                <div class="Video-List">
+                <iframe width="315" height="560"
+                 src="https://www.youtube.com/embed/GHCPXyFu9fo"
+                 allowfullscreen>
+                </iframe>
+                <iframe width="315" height="560"
+                 src="https://www.youtube.com/embed/Ncxdv2WGZi0"
+                 allowfullscreen>
+                </iframe>
+                    
+                </div>
+                <p class="price free">FREE</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="10">
+                <h3> Mathematics — Grade 10</h3>
+                <p class="price free">FREE</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAID COURSES -->
+    <section class="courses-section">
+        <h2 class="section-title"> Paid Courses</h2>
+        <div class="courses-grid" id="paidCourses">
+
+            <div class="course-card" data-grade="11">
+                <h3>Biology — Grade 11</h3>
+                <p class="price paid">₹499 / year</p>
+                <a href="biology-grade11.html" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="12">
+                <h3>Biology — Grade 12</h3>
+                <p class="price paid">₹499 / year</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="9">
+                <h3>Mathematics — Grade 9</h3>
+                <p class="price paid">₹399 / year</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="10">
+                <h3>Mathematics — Grade 10</h3>
+                <p class="price paid">₹399 / year</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="9">
+                <h3>Science — Grade 9</h3>
+                <p class="price paid">₹349 / year</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+            <div class="course-card" data-grade="10">
+                <h3>Science — Grade 10</h3>
+                <p class="price paid">₹349 / year</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+
+        </div>
+    </section>
+    <!--JavaScript for filter-->
+    <script src="..//static/courses.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>2026 Omkar EduHub | All Rights Reserved</p>
+    </footer>

@@ -1,0 +1,130 @@
+.page-title {
+    text-align: center;
+    padding: 50px 20px 20px;
+    background-color: #f4f6f9;
+}
+
+.page-title h1 {
+    font-size: 32px;
+    color: #0d6efd;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ── FILTER BUTTONS ── */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 22px;
+    border: 2px solid #0d6efd;
+    background-color: white;
+    color: #0d6efd;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* ── SECTION TITLES ── */
+.courses-section {
+    padding: 40px 60px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    color: #333;
+    border-left: 4px solid #0d6efd;
+    padding-left: 12px;
+}
+
+/* ── COURSE GRID ── */
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ── COURSE CARD ── */
+.course-card {
+    background: white;
+    border-radius: 10px;
+    padding: 24px 20px;
+    width: 340px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.iframe {
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.video-list {
+    height: 400px;       
+    overflow-y: scroll;   
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 8px;
+    background: #f4f6f9;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* ── PRICE BADGES ── */
+.price {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.price.free {
+    color: #28a745;   /* green for free */
+}
+
+.price.paid {
+    color: #0d6efd;   /* blue for paid */
+}
+
+/* ── HIDDEN CARD (used by JS filter) ── */
+.course-card.hidden {
+    display: none;
+}
+
+/* ── NO RESULTS MESSAGE ── */
+.no-results {
+    color: #999;
+    font-size: 15px;
+    padding: 10px 0;
+}

@@ -1,0 +1,108 @@
+/* ── LOCK BANNER ── */
+.lock-banner {
+    background-color: #fff8e1;
+    border-top: 3px solid #ffc107;
+    border-bottom: 3px solid #ffc107;
+    padding: 20px 40px;
+}
+
+.lock-banner-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.lock-icon {
+    font-size: 36px;
+}
+
+.lock-text h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.lock-text p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ── BUY NOW BUTTON ── */
+.buy-btn {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
+    margin-left: auto;
+}
+
+.buy-btn:hover {
+    background-color: #e68900;
+}
+
+/* ── FREE PREVIEW TAG ── */
+.free-tag {
+    background: #28a745;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 6px;
+}
+
+/* ── LOCKED ITEM ── */
+.locked-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    background-color: #fafafa;
+    opacity: 0.8;
+}
+
+.locked-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 22px;
+}
+
+.locked-info h4 {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.locked-info p {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ── SMALL UNLOCK BUTTON ── */
+.buy-btn-small {
+    background-color: #0d6efd;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.buy-btn-small:hover {
+    background-color: #0b5ed7;
+}

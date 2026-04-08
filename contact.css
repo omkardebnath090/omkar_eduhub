@@ -1,0 +1,145 @@
+/* ── PAGE TITLE ── */
+.page-title {
+    text-align: center;
+    padding: 50px 20px 20px;
+    background-color: #f4f6f9;
+}
+
+.page-title h1 {
+    font-size: 32px;
+    color: #0d6efd;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ── CONTACT SECTION ── */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px 60px;
+    flex-wrap: wrap;
+    background-color: #f4f6f9;
+}
+
+/* ── LEFT — CONTACT INFO ── */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 280px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+}
+
+.info-card span {
+    font-size: 28px;
+}
+
+.info-card h4 {
+    font-size: 14px;
+    color: #0d6efd;
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ── RIGHT — CONTACT FORM ── */
+.contact-form {
+    background: white;
+    border-radius: 12px;
+    padding: 36px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+/* ── FORM GROUP ── */
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0d6efd;
+}
+
+/* ── BUTTON ── */
+.contact-form .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form .btn:hover {
+    background-color: #0b5ed7;
+}
+
+/* ── ERROR MESSAGE ── */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ── SUCCESS MESSAGE ── */
+.success {
+    color: green;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 12px;
+    font-weight: bold;
+}

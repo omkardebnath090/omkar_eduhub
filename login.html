@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login — Omkar EduHub</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Omkar EduHub</div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Form -->
+    <section class="login-section">
+        <div class="login-box">
+
+            <h2>Welcome Back 👋</h2>
+            <p class="subtitle">Login to continue learning</p>
+
+            <form id="loginForm">
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                    <span class="error" id="emailError"></span>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <span class="error" id="passwordError"></span>
+                </div>
+
+                <!-- Forgot Password -->
+                <div class="forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="button" class="btn" onclick="validateLogin()">Login</button>
+
+                <!-- Success Message -->
+                <p class="success" id="successMsg"></p>
+
+            </form>
+
+            <p class="register-link">Don't have an account? <a href="register.html">Register here</a></p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2026 Omkar EduHub | All Rights Reserved</p>
+    </footer>
+
+    <script src="../static/login.js"></script>
+
+</body>
+</html>
