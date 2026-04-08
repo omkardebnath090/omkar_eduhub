@@ -50,7 +50,7 @@ nav ul li a:hover {
     padding-left: 60px;
     color: #0d6efd;
     min-height: 500px;
-    background-image: url("images/banner.jpeg");
+    background-image: url("banner.jpeg");
     background-size: cover;
     background-position: center;
     display: flex;
