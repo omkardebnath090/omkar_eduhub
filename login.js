@@ -31,7 +31,7 @@ function validateLogin() {
 
         // Redirect to homepage after 2 seconds
         setTimeout(function() {
-            window.location.href = 'home.html';
+            window.location.href = 'index.html';
         }, 2000);
     }
 }
