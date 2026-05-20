@@ -101,6 +101,13 @@
     border: none;
 }
 
+.video-wrapper video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
 /* ── NOTE ITEM ── */
 .note-item {
     display: flex;
