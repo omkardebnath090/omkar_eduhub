@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B.Ed. Notes | Omkar EduHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0F2A44;
+    --navy-800:#163A5C;
+    --navy-700:#1F4E78;
+    --orange-500:#F5821F;
+    --orange-400:#FBA23F;
+    --bg:#F4F6F9;
+    --card:#FFFFFF;
+    --ink:#152233;
+    --ink-soft:#5C6B7C;
+    --border:#E3E8EF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  .topbar{
+    background:linear-gradient(135deg, var(--navy-900), var(--navy-700));
+    padding:22px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .topbar img{
+    height:44px;
+    display:block;
+  }
+  .topbar .crumb{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    color:#EAF1FA;
+    background:rgba(255,255,255,.08);
+    padding:8px 16px;
+    border-radius:999px;
+    letter-spacing:.02em;
+    text-decoration:none;
+    transition:background .15s ease;
+  }
+  .topbar .crumb:hover{
+    background:rgba(255,255,255,.16);
+  }
+  .hero{
+    max-width:1040px;
+    margin:0 auto;
+    padding:44px 24px 8px;
+  }
+  h1{
+    font-family:'Poppins',sans-serif;
+    font-weight:800;
+    font-size:2.4rem;
+    margin:0 0 10px;
+    color:var(--navy-900);
+    letter-spacing:-.01em;
+  }
+  h1 span{color:var(--orange-500);}
+  .hero p.desc{
+    max-width:56ch;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+    margin:0 0 6px;
+  }
+  .byline{
+    font-size:.9rem;
+    color:var(--ink-soft);
+    margin:14px 0 0;
+  }
+  .byline strong{color:var(--navy-800); font-weight:700;}
+  .byline .role{color:var(--orange-500); font-weight:600;}
+
+  .tabs{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:0 24px;
+    display:flex;
+    gap:8px;
+  }
+  .tab-btn{
+    font-family:'Poppins',sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    background:var(--card);
+    border:1px solid var(--border);
+    color:var(--ink-soft);
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .tab-btn.active{
+    background:var(--navy-900);
+    border-color:var(--navy-900);
+    color:#fff;
+  }
+  .tab-btn:not(.active):hover{
+    border-color:var(--navy-700);
+    color:var(--navy-800);
+  }
+
+  main{
+    max-width:1040px;
+    margin:0 auto;
+    padding:24px 24px 80px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px,1fr));
+    gap:16px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(15,42,68,.10);
+    border-color:var(--orange-400);
+  }
+  .card .badge{
+    display:inline-flex;
+    align-self:flex-start;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--navy-800);
+    background:#EAF1FA;
+    padding:5px 10px;
+    border-radius:6px;
+  }
+  .card .title{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:1.08rem;
+    color:var(--navy-900);
+    line-height:1.3;
+  }
+  .card .open-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:auto;
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--orange-500);
+  }
+  .card .open-row svg{
+    width:16px; height:16px;
+    transition:transform .15s ease;
+  }
+  .card:hover .open-row svg{
+    transform:translateX(3px);
+  }
+
+  footer{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 24px 40px;
+    font-size:.85rem;
+    color:var(--ink-soft);
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+
+  /* --- Donate widget --- */
+  .donate-trigger{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .donate-prompt{
+    font-size:.85rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .donate-btn{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:.92rem;
+    color:#fff;
+    background:var(--orange-500);
+    border:none;
+    padding:10px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .donate-btn:hover{ background:#DD6E0F; transform:translateY(-1px); }
+
+  .donate-overlay{
+    position:fixed; inset:0;
+    background:rgba(15,42,68,.55);
+    display:flex; align-items:center; justify-content:center;
+    padding:20px;
+    z-index:1000;
+  }
+  .donate-overlay[hidden]{ display:none; }
+
+  .donate-card{
+    background:var(--card);
+    border-radius:18px;
+    max-width:520px;
+    width:100%;
+    max-height:92vh;
+    overflow-y:auto;
+    padding:32px;
+    position:relative;
+    color:var(--ink);
+    box-shadow:0 24px 60px rgba(15,42,68,.25);
+  }
+  .donate-close{
+    position:absolute; top:16px; right:16px;
+    width:32px; height:32px;
+    border-radius:50%;
+    border:1px solid var(--border);
+    background:#fff;
+    font-size:1.2rem;
+    line-height:1;
+    color:var(--ink-soft);
+    cursor:pointer;
+  }
+  .donate-close:hover{ background:#F4F6F9; color:var(--ink); }
+  .donate-kicker{
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:var(--orange-500);
+    margin:0 0 6px;
+  }
+  .donate-card h2{
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:1.5rem;
+    color:var(--navy-900);
+    margin:0 0 8px;
+  }
+  .donate-sub{
+    color:var(--ink-soft);
+    font-size:.92rem;
+    margin:0 0 20px;
+  }
+  .donate-body{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .donate-qr-box{
+    flex:0 0 180px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .donate-qr-box img{ width:100%; display:block; }
+  .donate-controls{ flex:1; min-width:200px; }
+  .upi-id-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#F4F6F9;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:8px 8px 8px 14px;
+    font-size:.9rem;
+    font-weight:600;
+    color:var(--navy-800);
+    margin-bottom:18px;
+  }
+  .upi-id-row button{
+    font-family:'Poppins', sans-serif;
+    font-size:.8rem;
+    font-weight:600;
+    color:#fff;
+    background:var(--navy-800);
+    border:none;
+    padding:6px 12px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .upi-id-row button:hover{ background:var(--navy-700); }
+  .amount-label{
+    font-size:.85rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin:0 0 8px;
+  }
+  .amount-pills{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .amount-pill{
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:.88rem;
+    background:#fff;
+    border:1px solid var(--border);
+    color:var(--navy-800);
+    padding:8px 16px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .amount-pill.active{
+    background:var(--navy-900);
+    border-color:var(--navy-900);
+    color:#fff;
+  }
+  #customAmountInput{
+    width:100%;
+    font-size:.95rem;
+    padding:10px 14px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:14px;
+    font-family:'Inter', sans-serif;
+  }
+  .pay-btn{
+    display:block;
+    text-align:center;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:.95rem;
+    color:#fff;
+    background:var(--orange-500);
+    padding:13px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    transition:background .15s ease;
+  }
+  .pay-btn:hover{ background:#DD6E0F; }
+  .donate-note{
+    font-size:.78rem;
+    color:var(--ink-soft);
+    margin:10px 0 0;
+  }
+  @media (max-width:480px){
+    .donate-body{ flex-direction:column; }
+    .donate-qr-box{ flex:none; max-width:200px; margin:0 auto; }
+  }
+
+  @media (max-width:560px){
+    .topbar{padding:16px 20px;}
+    h1{font-size:1.9rem;}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <img src="assets/omkar-eduhub-logo.png" alt="Omkar EduHub">
+    <a href="index.html" class="crumb">Home</a>
+  </div>
+
+  <div class="hero">
+    <h1>B.Ed. <span>Notes</span></h1>
+    <p class="desc">Semester-wise question banks with model answers — free for every B.Ed. student.</p>
+    <p class="byline">Created by <strong>Omkar Debnath</strong> — <span class="role">Founder, Omkar EduHub</span></p>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <main>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer>
+    <p>Notes are for personal study use. Spot an error? Message on Omkar Decodes.</p>
+    <div class="donate-trigger">
+      <p class="donate-prompt">Loved our work? Donate a little, as your wish, to support Omkar EduHub 💛</p>
+      <button id="donateBtn" class="donate-btn">Donate</button>
+    </div>
+  </footer>
+
+  <div id="donateModal" class="donate-overlay" hidden>
+    <div class="donate-card" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+      <button class="donate-close" id="donateClose" aria-label="Close">&times;</button>
+
+      <p class="donate-kicker">Support Omkar EduHub</p>
+      <h2 id="donateTitle">Buy us a chapter of notes ☕</h2>
+      <p class="donate-sub">Free notes for every student, forever. Your donation keeps it that way.</p>
+
+      <div class="donate-body">
+        <div class="donate-qr-box">
+          <img src="assets/donate-qr.jpg" alt="UPI QR code for Omkar Debnath">
+        </div>
+
+        <div class="donate-controls">
+          <div class="upi-id-row">
+            <span id="upiIdText">9862334721@ptaxis</span>
+            <button id="copyUpiBtn" type="button">Copy</button>
+          </div>
+
+          <p class="amount-label">Choose an amount</p>
+          <div class="amount-pills" id="amountPills">
+            <button type="button" class="amount-pill" data-amount="50">₹50</button>
+            <button type="button" class="amount-pill" data-amount="100">₹100</button>
+            <button type="button" class="amount-pill" data-amount="200">₹200</button>
+            <button type="button" class="amount-pill custom-pill" data-amount="custom">Custom</button>
+          </div>
+          <input type="number" id="customAmountInput" placeholder="Enter amount (₹)" min="1" hidden>
+
+          <a id="payBtn" class="pay-btn" href="#" target="_blank" rel="noopener">
+            Pay via UPI app
+          </a>
+          <p class="donate-note">On mobile this opens your UPI app. On desktop, just scan the QR above with any UPI app.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Edit this to add/remove semesters or courses.
+  // Each course's `id` must match the `paper` value used in
+  // bed-viewer.html?paper=<id>, and `file` is the PDF path on the site.
+  const semesters = [
+    {
+      label: "Semester 1",
+      papers: [
+        { id: "1.1.1", title: "Course 1.1.1", file: "notes/bed/sem1/1-1-1.pdf" },
+        { id: "1.1.2", title: "Course 1.1.2", file: "notes/bed/sem1/1-1-2.pdf" },
+        { id: "1.1.4", title: "Course 1.1.4", file: "notes/bed/sem1/1-1-4.pdf" },
+        { id: "1.1.5", title: "Course 1.1.5", file: "notes/bed/sem1/1-1-5.pdf" },
+        { id: "1.1.EPC-1", title: "Course 1.1.EPC-1", file: "notes/bed/sem1/1-1-epc1.pdf" }
+      ]
+    },
+    {
+      label: "Semester 2",
+      papers: [
+        { id: "2.1.1", title: "Course 2.1.1", file: "notes/bed/sem2/2-1-1.pdf" },
+        { id: "2.1.2", title: "Course 2.1.2", file: "notes/bed/sem2/2-1-2.pdf" },
+        { id: "2.1.3", title: "Course 2.1.3", file: "notes/bed/sem2/2-1-3.pdf" }
+      ]
+    }
+  ];
+
+  const tabsEl = document.getElementById("tabs");
+  const gridEl = document.getElementById("grid");
+  const arrowSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>`;
+
+  function renderSemester(index){
+    gridEl.innerHTML = "";
+    semesters[index].papers.forEach(p => {
+      const a = document.createElement("a");
+      a.className = "card";
+      a.href = `bed-viewer.html?paper=${encodeURIComponent(p.id)}`;
+      a.innerHTML = `
+        <span class="badge">${p.id}</span>
+        <span class="title">${p.title}</span>
+        <span class="open-row">Open notes ${arrowSVG}</span>
+      `;
+      gridEl.appendChild(a);
+    });
+  }
+
+  semesters.forEach((sem, i) => {
+    const btn = document.createElement("button");
+    btn.className = "tab-btn" + (i === 0 ? " active" : "");
+    btn.textContent = sem.label;
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderSemester(i);
+    });
+    tabsEl.appendChild(btn);
+  });
+
+  renderSemester(0);
+
+  // --- Donate widget ---
+  (function(){
+    const UPI_ID = "9862334721@ptaxis";
+    const PAYEE_NAME = "Omkar Debnath";
+
+    const dBtn = document.getElementById("donateBtn");
+    const dModal = document.getElementById("donateModal");
+    const dClose = document.getElementById("donateClose");
+    const dPills = document.querySelectorAll(".amount-pill");
+    const dCustomInput = document.getElementById("customAmountInput");
+    const dPayBtn = document.getElementById("payBtn");
+    const dCopyBtn = document.getElementById("copyUpiBtn");
+
+    let selectedAmount = 50;
+
+    function buildUpiLink(amount){
+      const params = new URLSearchParams({
+        pa: UPI_ID,
+        pn: PAYEE_NAME,
+        cu: "INR",
+        tn: "Donation to Omkar EduHub"
+      });
+      if (amount) params.set("am", amount);
+      return `upi://pay?${params.toString()}`;
+    }
+
+    function updatePayBtn(){
+      dPayBtn.href = buildUpiLink(selectedAmount);
+      dPayBtn.textContent = selectedAmount ? `Pay ₹${selectedAmount} via UPI app` : "Pay via UPI app";
+    }
+
+    dPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        dPills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        if (pill.dataset.amount === "custom") {
+          dCustomInput.hidden = false;
+          dCustomInput.focus();
+          selectedAmount = dCustomInput.value ? Number(dCustomInput.value) : null;
+        } else {
+          dCustomInput.hidden = true;
+          selectedAmount = Number(pill.dataset.amount);
+        }
+        updatePayBtn();
+      });
+    });
+
+    dCustomInput.addEventListener("input", () => {
+      selectedAmount = dCustomInput.value ? Number(dCustomInput.value) : null;
+      updatePayBtn();
+    });
+
+    dCopyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(UPI_ID).then(() => {
+        dCopyBtn.textContent = "Copied!";
+        setTimeout(() => (dCopyBtn.textContent = "Copy"), 1500);
+      });
+    });
+
+    dBtn.addEventListener("click", () => {
+      dModal.hidden = false;
+      dPills[0].classList.add("active");
+      updatePayBtn();
+    });
+    dClose.addEventListener("click", () => (dModal.hidden = true));
+    dModal.addEventListener("click", (e) => {
+      if (e.target === dModal) dModal.hidden = true;
+    });
+  })();
+</script>
+</body>
+</html>
